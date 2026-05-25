@@ -3,68 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axe-cess</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Axe-cess | Cybersecurity Game</title>
+  <link rel="stylesheet" href="page.css">
 </head>
 <body>
-  <main class="game-shell">
-    <header class="topbar" aria-label="Game status">
-      <div>
-        <p class="eyebrow">Axe-cess Control</p>
-        <h1>Axe-cess</h1>
-      </div>
-      <div class="stats" aria-live="polite">
-        <div class="stat">
-          <span>Score</span>
-          <strong id="score">0</strong>
-        </div>
-        <div class="stat">
-          <span>Level</span>
-          <strong id="level">1</strong>
-        </div>
-        <div class="stat">
-          <span>Time</span>
-          <strong id="timer">60</strong>
-        </div>
-      </div>
-    </header>
+  <header class="site-header">
+    <a class="brand" href="./">Axe-cess</a>
+    <nav aria-label="Primary navigation">
+      <a href="#why">Why</a>
+      <a href="#learn">What it teaches</a>
+      <a href="#screens">Screenshots</a>
+      <a class="nav-button" href="game.html">Play</a>
+    </nav>
+  </header>
 
-    <section class="play-layout" aria-label="Axe-cess game">
-      <aside class="panel">
-        <div class="panel-block">
-          <p class="panel-label">Objective</p>
-          <p>Read each access attempt and shut only the risky doors. Safe-looking doors are traps for your score.</p>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Cybersecurity, made playable</p>
+        <h1>Axe-cess turns access management into a quick, memorable game.</h1>
+        <p class="lede">Players scan access attempts, shut risky doors, and learn to spot the difference between routine activity and suspicious behavior under time pressure.</p>
+        <div class="actions">
+          <a class="primary-action" href="game.html">Play the game</a>
+          <a class="secondary-action" href="https://github.com/abyrao/axe-cess">View the code</a>
         </div>
-        <div class="button-row">
-          <button id="startButton" class="primary-button" type="button">Start game</button>
-          <button id="pauseButton" class="secondary-button" type="button" disabled>Pause</button>
-        </div>
-      </aside>
+      </div>
 
-      <section class="arena-wrap">
-        <div id="arena" class="arena" role="application" aria-label="Square access arena">
-          <div class="arena-grid" aria-hidden="true"></div>
-          <div id="message" class="message">
-            <strong>Ready your axe</strong>
-            <span>Click risky open doors before they disappear.</span>
+      <div class="game-preview" aria-label="Axe-cess game preview">
+        <div class="preview-top">
+          <span>Score 130</span>
+          <span>Level 4</span>
+          <span>Time 38</span>
+        </div>
+        <div class="preview-arena">
+          <div class="door-card risky">
+            <strong>Secrets Store</strong>
+            <span>Bulk credential browse</span>
+          </div>
+          <div class="door-card safe">
+            <strong>Snack Room</strong>
+            <span>Coffee refill detour</span>
+          </div>
+          <div class="door-card risky small">
+            <strong>Okta Admin</strong>
+            <span>MFA factor reset</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <aside class="panel event-panel">
-        <p class="panel-label">Attempt Log</p>
-        <ol id="eventLog" class="event-log" aria-live="polite"></ol>
-      </aside>
+    <section id="why" class="section two-column">
+      <div>
+        <p class="eyebrow">Why I Created It</p>
+        <h2>Security learning should be easier to enter.</h2>
+      </div>
+      <div class="section-copy">
+        <p>I created Axe-cess to explore ways of making cybersecurity more fun, approachable, and easy to understand. Access management can sound abstract or intimidating, but it affects real people and real organizations every day.</p>
+        <p>The game uses a familiar arcade pattern to make the topic feel less like a lecture and more like a challenge. Instead of memorizing policy language, players practice judgment: which access attempts feel normal, and which ones deserve immediate attention?</p>
+      </div>
+    </section>
+
+    <section id="learn" class="section">
+      <p class="eyebrow">What Players Learn</p>
+      <h2>Edutainment for access management basics.</h2>
+      <div class="learning-grid">
+        <article>
+          <span>01</span>
+          <h3>Risk signals</h3>
+          <p>Players learn to notice suspicious clues such as privilege escalation, off-hours access, token creation, unusual device activity, and sensitive data exports.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Decision speed</h3>
+          <p>The timer creates urgency, helping people practice fast triage while still reading carefully before acting.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>False positives</h3>
+          <p>Safe doors are mixed in so players learn that access management is not only about blocking everything. Good security requires judgment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screens" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Screenshots</p>
+        <h2>The game at a glance.</h2>
+      </div>
+      <div class="screenshots">
+        <figure>
+          <div class="screenshot ready-shot">
+            <div class="shot-bar">
+              <span>Score 0</span>
+              <span>Level 1</span>
+              <span>Time 60</span>
+            </div>
+            <div class="shot-message">
+              <strong>Ready your axe</strong>
+              <span>Click risky open doors before they disappear.</span>
+            </div>
+          </div>
+          <figcaption>Start state: players get the objective and prepare for a 60-second round.</figcaption>
+        </figure>
+        <figure>
+          <div class="screenshot play-shot">
+            <div class="shot-door door-one">
+              <strong>Prod Database</strong>
+              <span>Read query outside change window</span>
+            </div>
+            <div class="shot-door door-two">
+              <strong>Copy Room</strong>
+              <span>Print pickup</span>
+            </div>
+            <div class="shot-log">Closed Source Repo: +22</div>
+          </div>
+          <figcaption>Gameplay state: risky and routine access attempts compete for attention.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section callout">
+      <p class="eyebrow">Try It</p>
+      <h2>Play a round and see how quickly access decisions become intuitive.</h2>
+      <a class="primary-action" href="game.html">Launch Axe-cess</a>
     </section>
   </main>
 
-  <div id="axeCursor" class="axe-cursor" aria-hidden="true">
-    <span class="axe-graphic">
-      <span class="axe-handle"></span>
-      <span class="axe-head"></span>
-    </span>
-  </div>
-
-  <script src="game.js"></script>
+  <footer>
+    <p>Created to make cybersecurity education more accessible, playful, and practical.</p>
+  </footer>
 </body>
 </html>
