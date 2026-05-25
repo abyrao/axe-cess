@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axe-cess | Play</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar" aria-label="Game status">
+      <div>
+        <p class="eyebrow">Axe-cess Control</p>
+        <h1>Axe-cess</h1>
+      </div>
+      <div class="stats" aria-live="polite">
+        <div class="stat">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span>Level</span>
+          <strong id="level">1</strong>
+        </div>
+        <div class="stat">
+          <span>Time</span>
+          <strong id="timer">60</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="play-layout" aria-label="Axe-cess game">
+      <aside class="panel">
+        <div class="panel-block">
+          <p class="panel-label">Objective</p>
+          <p>Read each access attempt and shut only the risky doors. Safe-looking doors are traps for your score.</p>
+        </div>
+        <div class="button-row">
+          <button id="startButton" class="primary-button" type="button">Start game</button>
+          <button id="pauseButton" class="secondary-button" type="button" disabled>Pause</button>
+        </div>
+      </aside>
+
+      <section class="arena-wrap">
+        <div id="arena" class="arena" role="application" aria-label="Square access arena">
+          <div class="arena-grid" aria-hidden="true"></div>
+          <div id="message" class="message">
+            <strong>Ready your axe</strong>
+            <span>Click risky open doors before they disappear.</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel event-panel">
+        <p class="panel-label">Attempt Log</p>
+        <ol id="eventLog" class="event-log" aria-live="polite"></ol>
+      </aside>
+    </section>
+  </main>
+
+  <div id="axeCursor" class="axe-cursor" aria-hidden="true">
+    <span class="axe-graphic">
+      <span class="axe-handle"></span>
+      <span class="axe-head"></span>
+    </span>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
